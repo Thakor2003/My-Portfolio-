@@ -1,210 +1,75 @@
-bodbody {
-    background: #020617;
-    color: white;
+body {
+    margin: 0;
     font-family: Arial;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
 }
 
-.light {
-    background: white;
+/* Light Mode */
+body.light {
+    background: #f2f2f2;
     color: black;
 }
 
-.toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-}
-
-.card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.project-card {
-    padding: 10px;
-    margin: 10px;
-    background: #1e293b;
-    cursor: pointer;
-}
-
-input, textarea {
-    width: 80%;
-    margin: 5px;
-    padding: 10px;
-}
-
-button {
-    padding: 10px;
-    margin-top: 10px;
-}y<!DOCTYPE html>
-<html>
-<head>
-    <title>Sanjay Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<button onclick="toggleTheme()" class="toggle">🌙 Toggle</button>
-
-<div class="container">
-
-<div class="card profile">
-    <img src="profile.jpg">
-    <h1>Sanjay Thakor</h1>
-</div>
-
-<div class="card">
-    <h2>📌 About</h2>
-    <p id="typing"></p>
-</div>
-
-<div class="card">
-    <h2>📂 Projects</h2>
-
-    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-        🚦 AI Traffic Control
-    </div>
-
-    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-        🛒 E-commerce Website
-    </div>
-
-</div>
-
-<div class="card">
-    <h2>📩 Contact Me</h2>
-
-    <form action="https://formspree.io/f/your-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" placeholder="Message"></textarea><br>
-        <button type="submit">Send</button>
-    </form>
-
-</div>
-
-<div class="card">
-    👀 Visitors: <span id="visits">0</span>
-</div>
-
-</div>
-
-<script>
-let text = "Web Developer | Cybersecurity Enthusiast";
-let i = 0;
-function typing() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 30);
-    }
-}
-typing();
-
-// Theme toggle
-function toggleTheme() {
-    document.body.classList.toggle("light");
-}
-
-// Visitor counter
-let count = localStorage.getItem("visits") || 0;
-count++;
-localStorage.setItem("visits", count);
-document.getElementById("visits").innerText = count;
-</script>
-
-</body>
-</html> {
-    background: linear-gradient(135deg, #020617, #0f172a);
-    color: white;
-    font-family: Arial;
-    margin: 0;
-}
-
-/* Container */
 .container {
-    width: 90%;
-    margin: auto;
-    text-align: center;
+    padding: 20px;
 }
 
 /* Glass Card */
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    transition: 0.4s;
+    padding: 20px;
+    margin: 15px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
-/* Hover Animation */
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-}
-
-/* Profile */
+/* Profile Image */
 .profile img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 3px solid #38bdf8;
+    border: 3px solid cyan;
 }
 
-/* Headings */
-h1 {
-    color: #38bdf8;
-}
-
-h2 {
-    color: #22c55e;
-}
-
-/* List */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-/* Buttons */
-button {
-    margin: 5px;
-    padding: 10px 15px;
-    background: #38bdf8;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0ea5e9;
-}
-
-/* Project Cards */
+/* Project Card */
 .project-card {
-    background: #1e293b;
-    padding: 10px;
+    background: rgba(0,0,0,0.3);
     margin: 10px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .project-card:hover {
-    background: #334155;
-    transform: scale(1.05);
-}
-li {
-    cursor: pointer;
-    transition: 0.3s;
+    background: cyan;
+    color: black;
 }
 
-li:hover {
-    color: cyan;
-    transform: scale(1.05);
+/* Input */
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Button */
+button {
+    background: cyan;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Toggle Button */
+.toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }
