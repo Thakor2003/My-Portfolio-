@@ -1,6 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Sanjay Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button onclick="toggleTheme()" class="toggle">🌙 Toggle</button>
+
+<div class="container">
+
+<div class="card profile">
+    <img src="profile.jpg">
+    <h1>Sanjay Thakor</h1>
+</div>
+
+<div class="card">
+    <h2>📌 About</h2>
+    <p id="typing"></p>
+</div>
+
+<div class="card">
+    <h2>📂 Projects</h2>
+
+    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
+        🚦 AI Traffic Control
+    </div>
+
+    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
+        🛒 E-commerce Website
+    </div>
+
+</div>
+
+<div class="card">
+    <h2>📩 Contact Me</h2>
+
+    <form action="https://formspree.io/f/your-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="message" placeholder="Message"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+
+<div class="card">
+    👀 Visitors: <span id="visits">0</span>
+</div>
+
+</div>
+
+<script>
+let text = "Web Developer | Cybersecurity Enthusiast";
+let i = 0;
+function typing() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 30);
+    }
+}
+typing();
+
+// Theme toggle
+function toggleTheme() {
+    document.body.classList.toggle("light");
+}
+
+// Visitor counter
+let count = localStorage.getItem("visits") || 0;
+count++;
+localStorage.setItem("visits", count);
+document.getElementById("visits").innerText = count;
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
     <title>Sanjay Thakor Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
