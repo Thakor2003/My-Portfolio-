@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,20 +6,32 @@
 </head>
 <body>
 
-<button onclick="toggleTheme()" class="toggle">🌙 Toggle</button>
+<button onclick="toggleTheme()" class="toggle">🌙</button>
 
 <div class="container">
 
+<!-- Profile -->
 <div class="card profile">
     <img src="profile.jpg">
     <h1>Sanjay Thakor</h1>
+    <p>💻 Computer Engineering Student</p>
 </div>
 
+<!-- About -->
 <div class="card">
-    <h2>📌 About</h2>
+    <h2>📌 About Me</h2>
     <p id="typing"></p>
 </div>
 
+<!-- Skills -->
+<div class="card">
+    <h2>🚀 Skills</h2>
+    <p>Python, Java, C, C++</p>
+    <p>HTML, CSS, SQL</p>
+    <p>Flask, GitHub</p>
+</div>
+
+<!-- Projects -->
 <div class="card">
     <h2>📂 Projects</h2>
 
@@ -29,11 +40,24 @@
     </div>
 
     <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
+        🏛 Historical Places Website
+    </div>
+
+    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
         🛒 E-commerce Website
     </div>
 
 </div>
 
+<!-- Resume -->
+<div class="card">
+    <h2>📄 Resume</h2>
+    <a href="resume.pdf" download>
+        <button>Download Resume</button>
+    </a>
+</div>
+
+<!-- Contact -->
 <div class="card">
     <h2>📩 Contact Me</h2>
 
@@ -44,8 +68,21 @@
         <button type="submit">Send</button>
     </form>
 
+    <br>
+
+    <button onclick="window.open('https://github.com/Thakor2003')">GitHub</button>
+    <button onclick="window.open('https://linkedin.com')">LinkedIn</button>
+    <button onclick="window.open('https://instagram.com')">Instagram</button>
+
+    <br><br>
+
+    <a href="https://wa.me/918141993973">
+        <button>WhatsApp</button>
+    </a>
+
 </div>
 
+<!-- Visitors -->
 <div class="card">
     👀 Visitors: <span id="visits">0</span>
 </div>
@@ -53,6 +90,8 @@
 </div>
 
 <script>
+
+// Typing
 let text = "Web Developer | Cybersecurity Enthusiast";
 let i = 0;
 function typing() {
@@ -64,14 +103,17 @@ function typing() {
 }
 typing();
 
+// Theme
 function toggleTheme() {
     document.body.classList.toggle("light");
 }
 
+// Visitor Counter
 let count = localStorage.getItem("visits") || 0;
 count++;
 localStorage.setItem("visits", count);
 document.getElementById("visits").innerText = count;
+
 </script>
 
 </body>
