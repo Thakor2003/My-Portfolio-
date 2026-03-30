@@ -79,3 +79,12 @@ button:hover {
     background: #334155;
     transform: scale(1.05);
 }
+li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+li:hover {
+    color: cyan;
+    transform: scale(1.05);
+}
