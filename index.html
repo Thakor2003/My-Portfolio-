@@ -6,68 +6,77 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="card profile">
-            <img src="profile.jpg" alt="Profile Photo">
-            <h1>Sanjay Thakor</h1>
-            <p>💻 Computer Engineering Student</p>
-        </div>
+    <!-- Profile -->
+    <div class="card profile">
+        <img src="profile.jpg">
+        <h1>Sanjay Thakor</h1>
+        <p>💻 Computer Engineering Student</p>
+    </div>
 
-        <div class="card">
-            <h2>📌 About Me</h2>
-            <p id="typing"></p>
-        </div>
+    <!-- About -->
+    <div class="card">
+        <h2>📌 About Me</h2>
+        <p id="typing"></p>
+    </div>
 
-        <div class="card">
-            <h2>🚀 Skills</h2>
-            <ul>
-                <li>Python, Java, C, C++</li>
-                <li>HTML, CSS, SQL</li>
-                <li>Flask, GitHub</li>
-                <li>Networking & Hardware</li>
-            </ul>
-        </div>
+    <!-- Skills -->
+    <div class="card">
+        <h2>🚀 Skills</h2>
+        <ul>
+            <li>Python, Java, C, C++</li>
+            <li>HTML, CSS, SQL</li>
+            <li>Flask, GitHub</li>
+            <li>Networking & Hardware</li>
+        </ul>
+    </div>
 
-        <div class="card">
-            <h2>📂 Projects</h2>
-            <ul>
-                <li>AI Traffic Control Website</li>
-                <li>Historical Places Website</li>
-                <li>E-commerce Website</li>
-                <li>Student Management System</li>
-            </ul>
-        </div>
+    <!-- Projects -->
+    <div class="card">
+        <h2>📂 Projects</h2>
 
-        <div class="card">
-            <h2>🌐 Contact</h2>
-            <p>Email: st047450@gmail.com</p>
-            <p>Phone: 8141993973</p>
-
-            <button onclick="openGitHub()">GitHub</button>
-            <button onclick="window.open('https://linkedin.com')">LinkedIn</button>
-<button onclick="window.open('https://instagram.com')">Instagram</button>
-        </div>
+        <div class="project-card">🚦 AI Traffic Control Website</div>
+        <div class="project-card">🏰 Historical Places Website</div>
+        <div class="project-card">🛒 E-commerce Website</div>
+        <div class="project-card">🎓 Student Management System</div>
 
     </div>
 
-    <script>
-        let text = "Skilled in Web Development & Programming. Interested in Cybersecurity.";
-        let i = 0;
+    <!-- Contact -->
+    <div class="card">
+        <h2>🌐 Contact</h2>
+        <p>Email: st047450@gmail.com</p>
+        <p>Phone: 8141993973</p>
 
-        function typing() {
-            if (i < text.length) {
-                document.getElementById("typing").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 30);
-            }
-        }
-        typing();
+        <button onclick="openGitHub()">GitHub</button>
+        <button onclick="window.open('https://linkedin.com')">LinkedIn</button>
+        <button onclick="window.open('https://instagram.com')">Instagram</button>
 
-        function openGitHub() {
-            window.open("https://github.com/Thakor2003", "_blank");
-        }
-    </script>
+        <a href="resume.pdf" download>
+            <button>Download Resume</button>
+        </a>
+    </div>
+
+</div>
+
+<script>
+let text = "Skilled in Web Development & Programming. Interested in Cybersecurity.";
+let i = 0;
+
+function typing() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 30);
+    }
+}
+typing();
+
+function openGitHub() {
+    window.open("https://github.com/Thakor2003", "_blank");
+}
+</script>
 
 </body>
 </html>
