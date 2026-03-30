@@ -5,7 +5,6 @@ body {
     color: white;
 }
 
-/* Light Mode */
 body.light {
     background: #f2f2f2;
     color: black;
@@ -15,7 +14,6 @@ body.light {
     padding: 20px;
 }
 
-/* Glass Card */
 .card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -24,9 +22,9 @@ body.light {
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     text-align: center;
+    animation: fadeIn 1s ease;
 }
 
-/* Profile Image */
 .profile img {
     width: 120px;
     height: 120px;
@@ -34,7 +32,6 @@ body.light {
     border: 3px solid cyan;
 }
 
-/* Project Card */
 .project-card {
     background: rgba(0,0,0,0.3);
     margin: 10px;
@@ -49,7 +46,6 @@ body.light {
     color: black;
 }
 
-/* Input */
 input, textarea {
     width: 90%;
     padding: 10px;
@@ -58,18 +54,22 @@ input, textarea {
     border: none;
 }
 
-/* Button */
 button {
     background: cyan;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
+    margin: 5px;
 }
 
-/* Toggle Button */
 .toggle {
     position: fixed;
     top: 10px;
     right: 10px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
