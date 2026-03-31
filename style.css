@@ -1,85 +1,107 @@
+/* ===== BODY ===== */
 body {
-    font-family: Arial;
     margin: 0;
-    background: linear-gradient(to right, #0f2027, #203a43);
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: white;
 }
 
-/* Sidebar */
+/* ===== SIDEBAR ===== */
 .sidebar {
     position: fixed;
     left: 10px;
     top: 30%;
     display: flex;
     flex-direction: column;
+    z-index: 100;
 }
 
 .sidebar a {
     background: rgba(255,255,255,0.1);
     margin: 10px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
     color: white;
+    transition: 0.3s;
 }
 
-/* Toggle */
+.sidebar a:hover {
+    background: cyan;
+    color: black;
+}
+
+/* ===== TOGGLE BUTTON ===== */
 .toggle {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
+    background: cyan;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* Hero */
+/* ===== HERO ===== */
 .hero {
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
 }
 
 .hero img {
     width: 120px;
     border-radius: 50%;
     border: 3px solid cyan;
+    box-shadow: 0 0 20px cyan;
 }
 
 .hero span {
     color: cyan;
 }
 
-/* Cards */
+/* ===== CARD ===== */
 .card {
-    margin: 30px;
+    margin: 20px;
     padding: 20px;
     border-radius: 15px;
     background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    transition: 0.4s;
 }
 
-/* Skills */
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===== SKILLS ===== */
 .skill {
-    margin: 15px;
+    margin: 15px 0;
 }
 
 .bar {
     width: 100%;
     background: #333;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .bar div {
     height: 10px;
-    background: cyan;
+    background: linear-gradient(to right, cyan, #00ff88);
     border-radius: 10px;
 }
 
-/* Projects */
+/* ===== PROJECT ===== */
 .project-card {
-    margin: 15px;
+    margin: 15px 0;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     background: rgba(0,0,0,0.5);
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .project-card img {
@@ -91,29 +113,71 @@ body {
     transform: scale(1.05);
 }
 
-/* Form */
+/* ===== FORM ===== */
 input, textarea {
     width: 90%;
     margin: 10px;
     padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
 }
 
 button {
     background: cyan;
-    padding: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-/* Links */
+/* ===== LINKS (FIXED ISSUE) ===== */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
 .links a {
-    margin: 10px;
-    padding: 10px;
-    background: cyan;
+    padding: 10px 15px;
+    background: linear-gradient(45deg, cyan, #00ff88);
     color: black;
     text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 10px cyan;
 }
 
-/* Light mode */
+.links a:hover {
+    transform: scale(1.1);
+}
+
+/* ===== LIGHT MODE ===== */
 .light {
+    background: #f4f4f4;
+    color: black;
+}
+
+.light .card {
     background: white;
     color: black;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width: 600px) {
+    .card {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .hero img {
+        width: 100px;
+    }
+
+    .sidebar {
+        display: none;
+    }
 }
