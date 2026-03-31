@@ -1,194 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sanjay Thakor Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: linear-gradient(135deg,#0f172a,#1e293b);
-            color: white;
-        }
-
-        .light {
-            background: #f1f5f9;
-            color: black;
-        }
-
-        .toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            border: none;
-            border-radius: 20px;
-            background: cyan;
-            cursor: pointer;
-        }
-
-        .container {
-            width: 90%;
-            margin: auto;
-            padding-top: 60px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(0,255,255,0.2);
-        }
-
-        .profile img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid cyan;
-        }
-
-        h1 {
-            color: cyan;
-        }
-
-        h2 {
-            color: #22c55e;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .project-card {
-            background: #1e293b;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: scale(1.05);
-        }
-
-        .project-card img {
-            width: 100%;
-        }
-
-        .project-card p {
-            padding: 10px;
-        }
-
-        input, textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: cyan;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-    </style>
+    <title>Sanjay Pro Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <a href="#home">🏠</a>
+    <a href="#skills">⚡</a>
+    <a href="#projects">📂</a>
+    <a href="#contact">📩</a>
+</div>
 
 <button onclick="toggleTheme()" class="toggle">🌙</button>
 
-<div class="container">
-
-<!-- Profile -->
-<div class="card profile">
+<!-- Hero -->
+<section id="home" class="hero">
     <img src="profile.jpg">
-    <h1>Sanjay Thakor</h1>
-    <p>💻 Computer Engineering Student</p>
-</div>
+    <h1>Hi, I'm <span>Sanjay</span></h1>
+    <h2>Web Developer</h2>
+    <p>I create modern websites & love cybersecurity</p>
+</section>
 
-<!-- About -->
-<div class="card">
-    <h2>📌 About Me</h2>
-    <p id="typing"></p>
-</div>
+<!-- Skills -->
+<section id="skills" class="card">
+    <h2>⚡ Skills</h2>
 
-<!-- Projects -->
-<div class="card">
-    <h2>📂 Projects</h2>
-
-    <div class="projects">
-
-        <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-            <img src="project1.jpg">
-            <p>🚦 AI Traffic Control System</p>
-        </div>
-
-        <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-            <img src="project2.jpg">
-            <p>🛒 E-commerce Website</p>
-        </div>
-
+    <div class="skill">
+        <p>HTML</p>
+        <div class="bar"><div style="width:90%"></div></div>
     </div>
 
-</div>
+    <div class="skill">
+        <p>CSS</p>
+        <div class="bar"><div style="width:85%"></div></div>
+    </div>
 
-<!-- Contact Form -->
-<div class="card">
-    <h2>📩 Contact Me</h2>
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="bar"><div style="width:70%"></div></div>
+    </div>
+
+</section>
+
+<!-- Projects -->
+<section id="projects" class="card">
+    <h2>📂 Projects</h2>
+
+    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
+        <img src="project1.jpg">
+        <p>🚦 AI Traffic System</p>
+    </div>
+
+    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
+        <img src="project2.jpg">
+        <p>🛒 E-commerce Website</p>
+    </div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="card">
+    <h2>📩 Contact</h2>
 
     <form action="https://formspree.io/f/mgopkndb" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" placeholder="Message"></textarea><br>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Message"></textarea>
         <button type="submit">Send</button>
     </form>
 
-</div>
-
-<!-- Visitor Counter -->
-<div class="card">
-    👀 Visitors: <span id="visits">0</span>
-</div>
-
-</div>
+    <div class="links">
+        <a href="https://github.com/Thakor2003">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="resume.pdf" download>Resume</a>
+    </div>
+</section>
 
 <script>
-
-// typing effect
-let text = "Web Developer | Cybersecurity Enthusiast";
-let i = 0;
-
-function typing() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 30);
-    }
-}
-typing();
-
-// dark/light
 function toggleTheme() {
     document.body.classList.toggle("light");
 }
-
-// visitor counter
-let count = localStorage.getItem("visits") || 0;
-count++;
-localStorage.setItem("visits", count);
-document.getElementById("visits").innerText = count;
-
 </script>
 
 </body>
