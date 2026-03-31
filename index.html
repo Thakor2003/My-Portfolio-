@@ -1,119 +1,89 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sanjay Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Sanjay Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<button onclick="toggleTheme()" class="toggle">🌙</button>
-
-<div class="container">
-
-<!-- Profile -->
-<div class="card profile">
-    <img src="profile.jpg">
-    <h1>Sanjay Thakor</h1>
-    <p>💻 Computer Engineering Student</p>
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="#">🏠</a>
+  <a href="#skills">⚡</a>
+  <a href="#projects">📂</a>
+  <a href="#contact">📩</a>
 </div>
 
-<!-- About -->
-<div class="card">
-    <h2>📌 About Me</h2>
-    <p id="typing"></p>
+<!-- Hero Section -->
+<div class="hero">
+  <img src="profile.jpg" class="profile">
+  <h1>Hi, I'm <span>Sanjay</span></h1>
+  <h2 id="typing"></h2>
+  <p>Building modern web experiences 🚀</p>
+
+  <button onclick="scrollToSection('projects')">View My Work</button>
+  <a href="resume.pdf" download><button>Download CV</button></a>
 </div>
 
 <!-- Skills -->
-<div class="card">
-    <h2>🚀 Skills</h2>
-    <p>Python, Java, C, C++</p>
-    <p>HTML, CSS, SQL</p>
-    <p>Flask, GitHub</p>
+<div id="skills" class="section">
+  <h2>⚡ My Skills</h2>
+
+  <div class="bar"><span style="width:90%">HTML</span></div>
+  <div class="bar"><span style="width:85%">CSS</span></div>
+  <div class="bar"><span style="width:75%">Python</span></div>
+  <div class="bar"><span style="width:70%">Java</span></div>
+
 </div>
 
 <!-- Projects -->
-<div class="card">
-    <h2>📂 Projects</h2>
+<div id="projects" class="section">
+  <h2>📂 My Portfolio</h2>
 
-    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-        🚦 AI Traffic Control
+  <div class="projects">
+
+    <div class="card" onclick="window.open('https://github.com/Thakor2003')">
+      <img src="project1.jpg">
+      <p>AI Traffic System</p>
     </div>
 
-    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-        🏛 Historical Places Website
+    <div class="card" onclick="window.open('https://github.com/Thakor2003')">
+      <img src="project2.jpg">
+      <p>E-commerce Website</p>
     </div>
 
-    <div class="project-card" onclick="window.open('https://github.com/Thakor2003')">
-        🛒 E-commerce Website
-    </div>
-
-</div>
-
-<!-- Resume -->
-<div class="card">
-    <h2>📄 Resume</h2>
-    <a href="resume.pdf" download>
-        <button>Download Resume</button>
-    </a>
+  </div>
 </div>
 
 <!-- Contact -->
-<div class="card">
-    <h2>📩 Contact Me</h2>
+<div id="contact" class="section">
+  <h2>📩 Contact</h2>
 
-    <form action="https://formspree.io/f/mgopkndb" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required><br>
-        <input type="email" name="email" placeholder="Your Email" required><br>
-        <textarea name="message" placeholder="Message"></textarea><br>
-        <button type="submit">Send</button>
-    </form>
-
-    <br>
-
-    <button onclick="window.open('https://github.com/Thakor2003')">GitHub</button>
-    <button onclick="window.open('https://linkedin.com')">LinkedIn</button>
-    <button onclick="window.open('https://instagram.com')">Instagram</button>
-
-    <br><br>
-
-    <a href="https://wa.me/918141993973">
-        <button>WhatsApp</button>
-    </a>
-
-</div>
-
-<!-- Visitors -->
-<div class="card">
-    👀 Visitors: <span id="visits">0</span>
-</div>
-
+  <form action="https://formspree.io/f/mgopkndb" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
 </div>
 
 <script>
-
-// Typing
 let text = "Web Developer | Cybersecurity Enthusiast";
 let i = 0;
-function typing() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 30);
-    }
+function typing(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 40);
+  }
 }
 typing();
 
-// Theme
-function toggleTheme() {
-    document.body.classList.toggle("light");
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
-
-// Visitor Counter
-let count = localStorage.getItem("visits") || 0;
-count++;
-localStorage.setItem("visits", count);
-document.getElementById("visits").innerText = count;
-
 </script>
 
 </body>
