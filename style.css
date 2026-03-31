@@ -1,5 +1,12 @@
-body {
+/* RESET */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
     font-family: 'Poppins', sans-serif;
     background: #0f172a;
     color: white;
@@ -9,41 +16,60 @@ body {
 .navbar {
     position: fixed;
     width: 100%;
+    top: 0;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
-    background: rgba(0,0,0,0.5);
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 120px 20px;
+    padding: 120px 20px 40px;
 }
 
+/* FIXED IMAGE (MAIN ISSUE SOLVED HERE) */
 .hero img {
     width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 50%;
     border: 3px solid cyan;
+    display: block;
+    margin: auto;
+}
+
+/* HERO TEXT */
+.hero h1 {
+    margin-top: 10px;
 }
 
 .hero span {
     color: cyan;
 }
 
+.hero p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* BUTTON */
 .btn {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background: cyan;
+    background: linear-gradient(45deg, cyan, #00ffcc);
     color: black;
     border-radius: 20px;
+    text-decoration: none;
 }
 
 /* CARD */
 .card {
-    margin: 30px auto;
+    margin: 20px auto;
     width: 90%;
     max-width: 800px;
     padding: 20px;
@@ -57,26 +83,27 @@ body {
     margin: 10px 0;
 }
 
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+}
+
 .skill div {
     background: #333;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .skill div div {
     height: 10px;
-    background: cyan;
+    background: linear-gradient(90deg, cyan, #00ffcc);
 }
 
-/* PROJECT GRID */
+/* PROJECTS */
 .projects {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-}
-
-.project img {
-    width: 100%;
-    border-radius: 10px;
 }
 
 .project {
@@ -85,15 +112,58 @@ body {
     border-radius: 10px;
 }
 
+.project img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.project h3 {
+    margin-top: 10px;
+}
+
+.project p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.project a {
+    color: cyan;
+    text-decoration: none;
+}
+
 /* FORM */
 input, textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: cyan;
+    border: none;
+    border-radius: 20px;
+}
+
+/* LINKS */
+.links a {
+    margin: 5px;
+    padding: 8px 15px;
+    background: cyan;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* LIGHT MODE */
 .light {
     background: white;
     color: black;
+}
+
+.light .card {
+    background: white;
 }
