@@ -8,63 +8,41 @@
 /* BODY */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0f172a;
+    background: linear-gradient(135deg, #0f172a, #020617);
     color: white;
-}
-
-/* NAVBAR */
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 120px 20px 40px;
+    padding: 100px 20px 40px;
 }
 
-/* FIXED IMAGE (MAIN ISSUE SOLVED HERE) */
 .hero img {
     width: 120px;
     height: 120px;
-    object-fit: cover;
     border-radius: 50%;
+    object-fit: cover;
     border: 3px solid cyan;
-    display: block;
-    margin: auto;
-}
-
-/* HERO TEXT */
-.hero h1 {
-    margin-top: 10px;
+    box-shadow: 0 0 20px cyan;
 }
 
 .hero span {
     color: cyan;
 }
 
-.hero p {
-    margin: 5px 0;
-    opacity: 0.8;
-}
-
 /* BUTTON */
 .btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
+    padding: 10px 25px;
+    border-radius: 25px;
     background: linear-gradient(45deg, cyan, #00ffcc);
     color: black;
-    border-radius: 20px;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* CARD */
@@ -75,17 +53,13 @@ body {
     padding: 20px;
     border-radius: 15px;
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
 }
 
 /* SKILLS */
 .skill {
-    margin: 10px 0;
-}
-
-.skill span {
-    display: block;
-    margin-bottom: 5px;
+    margin: 15px 0;
 }
 
 .skill div {
@@ -100,16 +74,17 @@ body {
 }
 
 /* PROJECTS */
-.projects {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.project {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
-.project {
-    padding: 10px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 10px;
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px cyan;
 }
 
 .project img {
@@ -117,53 +92,54 @@ body {
     border-radius: 10px;
 }
 
-.project h3 {
-    margin-top: 10px;
-}
-
-.project p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.project a {
-    color: cyan;
-    text-decoration: none;
-}
-
-/* FORM */
+/* FORM FIX */
 input, textarea {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
     border: none;
+    outline: none;
+    font-size: 14px;
 }
 
+textarea {
+    height: 100px;
+}
+
+/* SEND BUTTON */
 button {
-    padding: 10px 20px;
+    padding: 10px 25px;
+    border-radius: 20px;
     background: cyan;
     border: none;
-    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* LINKS */
+button:hover {
+    background: #00ffcc;
+    transform: scale(1.05);
+}
+
+/* SOCIAL BUTTONS */
 .links a {
     margin: 5px;
-    padding: 8px 15px;
-    background: cyan;
+    padding: 10px 18px;
+    background: linear-gradient(45deg, cyan, #00ffcc);
     color: black;
     border-radius: 20px;
     text-decoration: none;
     display: inline-block;
+    transition: 0.3s;
 }
 
-/* LIGHT MODE */
-.light {
-    background: white;
-    color: black;
+.links a:hover {
+    transform: scale(1.05);
 }
 
-.light .card {
-    background: white;
-}
+/* VISITOR */
+#visits {
+    color: cyan;
+    font-weight: bold;
+    }
