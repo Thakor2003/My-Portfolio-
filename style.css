@@ -1,90 +1,62 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* BODY */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
     color: white;
 }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 100px 20px 40px;
-}
-
-.hero img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid cyan;
-    box-shadow: 0 0 20px cyan;
-}
-
-.hero span {
-    color: cyan;
-}
-
-/* BUTTON */
-.btn {
-    padding: 10px 25px;
-    border-radius: 25px;
-    background: linear-gradient(45deg, cyan, #00ffcc);
-    color: black;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* CARD */
-.card {
-    margin: 20px auto;
+.container {
     width: 90%;
-    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    border-radius: 15px;
+}
+
+.card {
     background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    backdrop-filter: blur(10px);
 }
 
-/* SKILLS */
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid cyan;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: cyan;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
 .skill {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
-.skill div {
+.bar {
     background: #333;
     border-radius: 10px;
-    overflow: hidden;
 }
 
-.skill div div {
-    height: 10px;
-    background: linear-gradient(90deg, cyan, #00ffcc);
+.bar div {
+    height: 8px;
+    background: cyan;
+    border-radius: 10px;
 }
 
-/* PROJECTS */
 .project {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 12px;
-    background: rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px cyan;
+    margin-top: 20px;
 }
 
 .project img {
@@ -92,54 +64,45 @@ body {
     border-radius: 10px;
 }
 
-/* FORM FIX */
+.project a {
+    color: cyan;
+    text-decoration: none;
+}
+
 input, textarea {
     width: 100%;
-    padding: 12px;
     margin: 10px 0;
+    padding: 10px;
     border-radius: 8px;
     border: none;
-    outline: none;
-    font-size: 14px;
 }
 
-textarea {
-    height: 100px;
-}
-
-/* SEND BUTTON */
 button {
-    padding: 10px 25px;
-    border-radius: 20px;
+    padding: 10px 20px;
     background: cyan;
     border: none;
-    cursor: pointer;
-    transition: 0.3s;
+    border-radius: 10px;
 }
 
-button:hover {
-    background: #00ffcc;
-    transform: scale(1.05);
-}
-
-/* SOCIAL BUTTONS */
-.links a {
+.social a {
     margin: 5px;
-    padding: 10px 18px;
-    background: linear-gradient(45deg, cyan, #00ffcc);
+    padding: 8px 15px;
+    background: cyan;
     color: black;
     border-radius: 20px;
     text-decoration: none;
-    display: inline-block;
-    transition: 0.3s;
 }
 
-.links a:hover {
-    transform: scale(1.05);
+.toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background: cyan;
+    border-radius: 50%;
 }
 
-/* VISITOR */
-#visits {
-    color: cyan;
-    font-weight: bold;
-    }
+.light {
+    background: white;
+    color: black;
+}
