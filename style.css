@@ -1,75 +1,108 @@
 body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color: white;
 }
 
-body.light {
-    background: #f2f2f2;
-    color: black;
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 10px;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
 }
 
-.container {
-    padding: 20px;
+.sidebar a {
+  margin: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  text-align: center;
+  color: cyan;
+  text-decoration: none;
+  box-shadow: 0 0 10px cyan;
 }
 
-.card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    margin: 15px 0;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    text-align: center;
-    animation: fadeIn 1s ease;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid cyan;
+.profile {
+  width: 120px;
+  border-radius: 50%;
+  border: 3px solid cyan;
+  box-shadow: 0 0 20px cyan;
 }
 
-.project-card {
-    background: rgba(0,0,0,0.3);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    background: cyan;
-    color: black;
-}
-
-input, textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 8px;
-    border: none;
+.hero span {
+  color: cyan;
 }
 
 button {
-    background: cyan;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  background: cyan;
+  cursor: pointer;
 }
 
-.toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+/* Section */
+.section {
+  padding: 40px;
+  text-align: center;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+/* Skills */
+.bar {
+  background: rgba(255,255,255,0.1);
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.bar span {
+  display: block;
+  padding: 10px;
+  background: cyan;
+  border-radius: 20px;
+}
+
+/* Projects */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  margin: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Form */
+input, textarea {
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
 }
